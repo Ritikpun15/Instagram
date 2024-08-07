@@ -8,7 +8,6 @@ import { loginUser, setLoading } from "./features/userSlice";
 
 function App() {
   const user = useSelector((state) => state.data.user.user);
-  const isLoading = useSelector((state) => state.data.user.isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +20,6 @@ function App() {
             username: authUser.displayName,
           })
         );
-        dispatch(setLoading(false));
       } else {
         console.log("User  is not logged in");
       }
